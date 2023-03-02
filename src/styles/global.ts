@@ -19,12 +19,17 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fonts.font};
     font-weight: 400;
     font-size: ${({ theme }) => theme.textSizes['text-m']};
+    line-height: 160%;
   }
   button {
     cursor: pointer;
   }
   a {
+    color: inherit;
     text-decoration: none;
+  }
+  ul {
+    list-style: none;
   }
    input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
