@@ -1,38 +1,75 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useCallback, useEffect, useState } from 'react'
 import { Link } from '../../../../components/Link'
+import { Spinner } from '../../../../components/Spinner'
+import { api } from '../../../../lib/axios'
 import { ProfileContainer, ProfileDetails, ProfilePicture } from './styles'
 
+const username = 'Rafeso'
+
+interface ProfileData {
+  login: string
+  bio: string
+  avatar_url: string
+  html_url: string
+  name: string
+  company?: string
+  followers: number
+}
+
 export function Profile() {
+  const [profileData, setProfileData] = useState<ProfileData>({} as ProfileData)
+  const [isLoading, setIsLoading] = useState(true)
+
+  const getProfileData = useCallback(async () => {
+    try {
+      setIsLoading(true)
+      const response = await api.get(`/users/${username}`)
+
+      setProfileData(response.data)
+    } finally {
+      setIsLoading(false)
+    }
+  }, [profileData])
+
+  useEffect(() => {
+    getProfileData()
+  }, [])
+
   return (
     <ProfileContainer>
-      <ProfilePicture src="https://github.com/Rafeso.png" />
-      <ProfileDetails>
-        <header>
-          <h1>Rafael Feitosa</h1>
-          <Link text="github" href="#" />
-        </header>
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
-        <ul>
-          <li>
-            <FontAwesomeIcon icon={faGithub} />
-            Rafeso
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faBuilding} />
-            Rafeso Company
-          </li>
-          <li>
-            <FontAwesomeIcon icon={faUserGroup} />
-            32 seguidores
-          </li>
-        </ul>
-      </ProfileDetails>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <ProfilePicture src={profileData.avatar_url} />
+          <ProfileDetails>
+            <header>
+              <h1>{profileData.name}</h1>
+              <Link text="github" href={profileData.html_url} target="_blank" />
+            </header>
+            <p>{profileData.bio}</p>
+            <ul>
+              <li>
+                <FontAwesomeIcon icon={faGithub} />
+                {profileData.login}
+              </li>
+              {profileData?.company && (
+                <li>
+                  <FontAwesomeIcon icon={faBuilding} />
+                  {profileData.company}
+                </li>
+              )}
+              <li>
+                <FontAwesomeIcon icon={faUserGroup} />
+                {profileData.followers} seguidores
+              </li>
+            </ul>
+          </ProfileDetails>
+        </>
+      )}
     </ProfileContainer>
   )
 }

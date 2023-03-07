@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from 'react'
+import { Spinner } from '../../components/Spinner'
 import { api } from '../../lib/axios'
 import { Post } from './components/Post'
 import { Profile } from './components/Profile'
@@ -29,7 +31,7 @@ export function Blog() {
         const response = await api.get(
           `/search/issues?q=${query}%20repo:${username}/${repoName}`,
         )
-        console.log(response.data.items)
+
         setPosts(response.data.items)
       } finally {
         setIsLoading(false)
@@ -37,18 +39,24 @@ export function Blog() {
     },
     [posts],
   )
+
   useEffect(() => {
     getPosts()
   }, [])
+
   return (
     <>
       <Profile />
-      <SearchInput />
-      <PostListContainer>
-        {posts.map((post) => (
-          <Post key={post.number} post={post} />
-        ))}
-      </PostListContainer>
+      <SearchInput postsLength={posts.length} getPosts={getPosts} />
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <PostListContainer>
+          {posts.map((post) => (
+            <Post key={post.number} post={post} />
+          ))}
+        </PostListContainer>
+      )}
     </>
   )
 }
