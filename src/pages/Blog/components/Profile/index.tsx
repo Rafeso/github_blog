@@ -32,11 +32,11 @@ export function Profile() {
     } finally {
       setIsLoading(false)
     }
-  }, [profileData])
+  }, [])
 
   useEffect(() => {
     getProfileData()
-  }, [])
+  }, [getProfileData])
 
   return (
     <ProfileContainer>
