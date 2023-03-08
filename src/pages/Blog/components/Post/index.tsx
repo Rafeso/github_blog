@@ -1,5 +1,5 @@
+import { DateFormatter } from '@utils/formatter'
 import { IPost } from '../..'
-import { DateFormatter } from '../../../../utils/formatter'
 import { PostContainer } from './styles'
 
 interface PostProps {

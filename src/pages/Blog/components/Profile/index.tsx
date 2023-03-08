@@ -1,10 +1,10 @@
+import { Link } from '@component/Link'
+import { Spinner } from '@component/Spinner'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faBuilding, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { api } from '@lib/axios'
 import { useCallback, useEffect, useState } from 'react'
-import { Link } from '../../../../components/Link'
-import { Spinner } from '../../../../components/Spinner'
-import { api } from '../../../../lib/axios'
 import { ProfileContainer, ProfileDetails, ProfilePicture } from './styles'
 
 const username = 'Rafeso'

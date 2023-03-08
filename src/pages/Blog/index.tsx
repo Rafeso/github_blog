@@ -1,10 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { Spinner } from '@component/Spinner'
+import { Post } from '@componentBlog/Post'
+import { Profile } from '@componentBlog/Profile'
+import { SearchInput } from '@componentBlog/SearchInput'
+import { api } from '@lib/axios'
 import { useCallback, useEffect, useState } from 'react'
-import { Spinner } from '../../components/Spinner'
-import { api } from '../../lib/axios'
-import { Post } from './components/Post'
-import { Profile } from './components/Profile'
-import { SearchInput } from './components/SearchInput'
+
 import { PostListContainer } from './styles'
 
 const username = 'Rafeso'

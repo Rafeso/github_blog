@@ -1,3 +1,5 @@
+import { Link } from '@component/Link'
+import { Spinner } from '@component/Spinner'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import {
   faCalendar,
@@ -5,11 +7,9 @@ import {
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { DateFormatter } from '@utils/formatter'
 import { useNavigate } from 'react-router-dom'
-import { Link } from '../../../../components/Link'
-import { Spinner } from '../../../../components/Spinner'
-import { DateFormatter } from '../../../../utils/formatter'
-import { IPost } from '../../../Blog'
+import { IPost } from 'src/pages/Blog'
 import { PostInfoContainer } from './styles'
 
 interface PostHeaderProps {

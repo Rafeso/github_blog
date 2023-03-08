@@ -1,8 +1,8 @@
 /* eslint-disable react/no-children-prop */
 import ReactMarkdown from 'react-markdown'
-import { PostContentContainer } from './styles'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { PostContentContainer } from './styles'
 
 interface PostContentProps {
   content: string
