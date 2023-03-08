@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { DateFormatter } from '@utils/formatter'
 import { useNavigate } from 'react-router-dom'
-import { IPost } from 'src/pages/Blog'
+import { IPost } from 'pages/Blog'
 import { PostInfoContainer } from './styles'
 
 interface PostHeaderProps {
