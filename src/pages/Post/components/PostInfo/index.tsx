@@ -20,8 +20,6 @@ interface PostHeaderProps {
 export function PostInfo({ postData, isLoading }: PostHeaderProps) {
   const navigate = useNavigate()
 
-  console.log(postData)
-
   function goBack() {
     navigate(-1)
   }
