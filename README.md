@@ -53,8 +53,8 @@ O GitHub Blog foi desenvolvido no terceiro módulo da trilha como um desafio que
 <h1 align='center'> 💻 Layout e Web 🖌</h1>
 
 <p align="center" style='display:flex; gap:1rem;'>
-  <img alt="GitHub Blog Preview" title="#github_blog" src="./.github/preview_home.png" width="50%" height="350" >
-  <img alt="GitHub Blog Preview" title="#coffee_delivery" src="./.github/preview_post.png" width="50%" height="350">
+  <img alt="GitHub Blog Preview" title="#github_blog" src="./.github/preview_home.png" width="40%" height="700">
+  <img alt="GitHub Blog Preview" title="#coffee_delivery" src="./.github/preview_post.png" width="40%" height="700">
 </p>
 
 <div style="display: flex; gap: 0.5rem;">
