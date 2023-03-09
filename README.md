@@ -53,8 +53,8 @@ O GitHub Blog foi desenvolvido no terceiro módulo da trilha como um desafio que
 <h1 align='center'> 💻 Layout e Web 🖌</h1>
 
 <p align="center" style='display:flex; gap:1rem; width="100%"'>
-  <img alt="GitHub Blog Preview" title="#github_blog" src="./.github/preview_home.png" width="350" height="500">
-  <img alt="GitHub Blog Preview" title="#coffee_delivery" src="./.github/preview_post.png" width="350" height="500">
+  <img alt="GitHub Blog Preview" title="#home_page" src="./.github/preview_home.png" width="350" height="500">
+  <img alt="GitHub Blog Preview" title="#post_page" src="./.github/preview_post.png" width="350" height="500">
 </p>
 
 <div style="display: flex; gap: 0.5rem;">
@@ -114,7 +114,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - **[Axios](https://axios-http.com/)**
 - **[Moment](https://momentjs.com/)**
 
-> Veja o arquivo [package.json](https://github.com/Rafeso/coffee_delivery/blob/main/package.json)
+> Veja o arquivo [package.json](https://github.com/Rafeso/github_blog/blob/main/package.json)
 
 #### [](https://github.com/Rafeso/coffee_delivery#utilit%C3%A1rios)**Utilitários**
 
